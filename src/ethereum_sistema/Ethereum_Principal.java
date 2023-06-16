@@ -192,7 +192,7 @@ public class Ethereum_Principal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jalumnos.setPreferredSize(new java.awt.Dimension(664, 600));
+        jalumnos.setPreferredSize(new java.awt.Dimension(530, 600));
 
         jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -263,17 +263,17 @@ public class Ethereum_Principal extends javax.swing.JFrame {
         jalumnos.getContentPane().setLayout(jalumnosLayout);
         jalumnosLayout.setHorizontalGroup(
             jalumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jalumnosLayout.createSequentialGroup()
-                .addContainerGap(348, Short.MAX_VALUE)
+            .addGroup(jalumnosLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(218, 218, 218))
+                .addContainerGap(525, Short.MAX_VALUE))
         );
         jalumnosLayout.setVerticalGroup(
             jalumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jalumnosLayout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(jalumnosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -556,6 +556,18 @@ public class Ethereum_Principal extends javax.swing.JFrame {
                     + " (Nombre,Numero_cuenta,Contrasena,Carrera,Becado,Indice,Descuento,CantAprob,ListA)"
                     + " VALUES ('" + n + "', '" + c + "', '" + contra + "', '" + carrera + "', '" + becado + "', '" + indice + "', '" + descuento + "', '" + claseprob + "', '" + lista +  "')");
             db.commit();
+            
+            TxNombreA.setText("");
+            TxNumCuentaA.setText("");
+            TxContraseñaA.setText("");
+            TxCarreraA.setText("");
+            TxBecadoA.setText("");
+            TDescuentoA.setText("");
+            TxIndiceA.setText("");
+            TxClaseAporbadaA.setText("");
+            TListaClaseA.setText("");
+            
+            
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
