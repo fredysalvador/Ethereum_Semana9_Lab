@@ -93,6 +93,9 @@ public class Ethereum_Principal extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         TPrecioAsign = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
+        MenuSelectivo = new javax.swing.JDialog();
+        tmaestrocreacion = new javax.swing.JButton();
+        talumnocreacion = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -123,6 +126,11 @@ public class Ethereum_Principal extends javax.swing.JFrame {
         jLabel10.setText("Lista de Clases:");
 
         btagregarMaestro.setText("Agregar");
+        btagregarMaestro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btagregarMaestroMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jmaestrosLayout = new javax.swing.GroupLayout(jmaestros.getContentPane());
         jmaestros.getContentPane().setLayout(jmaestrosLayout);
@@ -461,6 +469,41 @@ public class Ethereum_Principal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        tmaestrocreacion.setText("Maestro");
+        tmaestrocreacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tmaestrocreacionMouseClicked(evt);
+            }
+        });
+
+        talumnocreacion.setText("Alumno");
+        talumnocreacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                talumnocreacionMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout MenuSelectivoLayout = new javax.swing.GroupLayout(MenuSelectivo.getContentPane());
+        MenuSelectivo.getContentPane().setLayout(MenuSelectivoLayout);
+        MenuSelectivoLayout.setHorizontalGroup(
+            MenuSelectivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuSelectivoLayout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addComponent(tmaestrocreacion, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(talumnocreacion, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
+        );
+        MenuSelectivoLayout.setVerticalGroup(
+            MenuSelectivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuSelectivoLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(MenuSelectivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tmaestrocreacion, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(talumnocreacion, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -473,6 +516,11 @@ public class Ethereum_Principal extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton2.setText("Crear Usuarios");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("Login");
@@ -655,6 +703,71 @@ public class Ethereum_Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TPrecioAsignActionPerformed
 
+    private void tmaestrocreacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tmaestrocreacionMouseClicked
+        // TODO add your handling code here:
+        jmaestros.pack();
+        jmaestros.setLocationRelativeTo(this);
+        jmaestros.setModal(true);
+        jmaestros.setVisible(true);
+    }//GEN-LAST:event_tmaestrocreacionMouseClicked
+
+    private void talumnocreacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_talumnocreacionMouseClicked
+        // TODO add your handling code here:
+         jalumnos.pack();
+        jalumnos.setLocationRelativeTo(this);
+        jalumnos.setModal(true);
+        jalumnos.setVisible(true);
+    }//GEN-LAST:event_talumnocreacionMouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        MenuSelectivo.pack();
+        MenuSelectivo.setLocationRelativeTo(this);
+        MenuSelectivo.setModal(true);
+        MenuSelectivo.setVisible(true);
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void btagregarMaestroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btagregarMaestroMouseClicked
+             // TODO add your handling code here:
+        //agregar
+       Dba db = new Dba("./BaseDatosRegistro.mdb");
+        db.conectar();
+        try {
+            int c;
+            String n, contra, lista, nacionalidad, titulo;
+           
+            
+            n = TxNombreM.getText();
+            c = Integer.parseInt(TxNumCuentaM.getText());
+            contra = TxContraseñaM.getText();
+            nacionalidad = TxNacionalidadM.getText();
+            titulo = TxTituloM.getText();
+            lista = TListaClases.getText();
+            
+            
+            
+            db.query.execute("INSERT INTO Maestros"
+                    + " (Nombre,Numero_cuenta,Contrasena,nacionalidad,titulo,lista)"
+                    + " VALUES ('" + n + "', '" + c + "', '" + contra + "', '" + nacionalidad + "', '" + titulo + "', '" + lista + "')");
+            db.commit();
+            
+            TxNombreM.setText("");
+            TxNumCuentaM.setText("");
+            TxContraseñaM.setText("");
+            TxNacionalidadM.setText("");
+            TxTituloM.setText("");
+            TListaClases.setText("");
+            
+            
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        db.desconectar();
+ 
+        
+        
+    }//GEN-LAST:event_btagregarMaestroMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -691,6 +804,7 @@ public class Ethereum_Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog MenuSelectivo;
     private javax.swing.JTextField TCantalumnoAsign;
     private javax.swing.JTextField TDescuentoA;
     private javax.swing.JTextField TDiasImparteAsign;
@@ -762,5 +876,7 @@ public class Ethereum_Principal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JDialog jalumnos;
     private javax.swing.JDialog jmaestros;
+    private javax.swing.JButton talumnocreacion;
+    private javax.swing.JButton tmaestrocreacion;
     // End of variables declaration//GEN-END:variables
 }
