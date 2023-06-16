@@ -276,6 +276,8 @@ public class Ethereum_Principal extends javax.swing.JFrame {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
+        jAsignaturas.setPreferredSize(new java.awt.Dimension(664, 372));
+
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel11.setText("Aula:");
 
@@ -304,6 +306,11 @@ public class Ethereum_Principal extends javax.swing.JFrame {
         jLabel15.setText("Numero de Asignatura:");
 
         btagregar1.setText("Agregar");
+        btagregar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btagregar1MouseClicked(evt);
+            }
+        });
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel16.setText("Docente:");
@@ -325,6 +332,12 @@ public class Ethereum_Principal extends javax.swing.JFrame {
 
         jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel32.setText("Dias que se Imparte:");
+
+        TPrecioAsign.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TPrecioAsignActionPerformed(evt);
+            }
+        });
 
         jLabel33.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel33.setText("Precio:");
@@ -584,6 +597,63 @@ public class Ethereum_Principal extends javax.swing.JFrame {
         jalumnos.setModal(true);
         jalumnos.setVisible(true);
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void btagregar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btagregar1MouseClicked
+        // TODO add your handling code here:
+               // TODO add your handling code here:
+        //agregar
+       Dba db = new Dba("./BaseDatosRegistro.mdb");
+        db.conectar();
+        try {
+            int c, valorund,aula,edifasugn,cantalumn,tprec;
+            String n,  seccion, horario, docente, modalidad, tdiasImpart;
+            
+            
+            
+            n = TxNombreAsign.getText();
+            c = Integer.parseInt(TxNumCuentaAsign.getText());
+            seccion = TxNumSeccionAsign.getText();
+            horario =  TxHorarioAsign.getText();
+            docente = TxDocenteAsign.getText();
+            valorund = Integer.parseInt(TxValorUnidAsign.getText());
+            aula =  Integer.parseInt(TxAulaAsign.getText());
+            edifasugn =  Integer.parseInt(TxEdificioAsign.getText());
+            cantalumn = Integer.parseInt(TCantalumnoAsign.getText());
+            modalidad = TModalidadAsign.getText();
+            tdiasImpart = TDiasImparteAsign.getText();
+            tprec = Integer.parseInt(TPrecioAsign.getText());
+            
+            
+            
+            
+            db.query.execute("INSERT INTO Asignaturas"
+                    + " (Nombre,cod_asig,cod_sec,horario,docente,cant_vlunt,aulaedificio,Cantaalumn,Modalidad,DíasImparte,precio)"
+                    + " VALUES ('" + n + "', '" + c + "', '" + seccion + "', '" + horario + "', '" + docente + "', '" + valorund + "', '" + aula + "', '" + edifasugn + "', '" + cantalumn + "', '" + modalidad + "', '" + tdiasImpart + "', '" + tprec +  "')");
+            db.commit();
+            
+            TxNombreAsign.setText("");
+            TxNumCuentaAsign.setText("");
+            TxNumSeccionAsign.setText("");
+            TxHorarioAsign.setText("");
+            TxDocenteAsign.setText("");
+            TxValorUnidAsign.setText("");
+            TxAulaAsign.setText("");
+            TxEdificioAsign.setText("");
+            TCantalumnoAsign.setText("");
+            TModalidadAsign.setText("");
+            TDiasImparteAsign.setText("");
+            TPrecioAsign.setText("");
+            
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        db.desconectar();
+ 
+    }//GEN-LAST:event_btagregar1MouseClicked
+
+    private void TPrecioAsignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TPrecioAsignActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TPrecioAsignActionPerformed
 
     /**
      * @param args the command line arguments
