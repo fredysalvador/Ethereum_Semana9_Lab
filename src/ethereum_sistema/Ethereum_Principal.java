@@ -30,6 +30,7 @@ public class Ethereum_Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jmaestros = new javax.swing.JDialog();
+        jLayeredPane2 = new javax.swing.JLayeredPane();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -67,6 +68,7 @@ public class Ethereum_Principal extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         TxClaseAporbadaA = new javax.swing.JTextField();
         jAsignaturas = new javax.swing.JDialog();
+        jLayeredPane3 = new javax.swing.JLayeredPane();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         TxNombreAsign = new javax.swing.JTextField();
@@ -104,26 +106,43 @@ public class Ethereum_Principal extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
+        jmaestros.setPreferredSize(new java.awt.Dimension(500, 416));
+
+        jLayeredPane2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel4.setText("Formulario de Maestros");
+        jLayeredPane2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 442, 89));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setText("Nombre:");
+        jLayeredPane2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 113, 134, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("Numero de Cuenta:");
+        jLayeredPane2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 144, 166, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel7.setText("Contraseña:");
+        jLayeredPane2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 175, 134, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setText("Nacional:");
+        jLayeredPane2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 206, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel9.setText("Titulo:");
+        jLayeredPane2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 237, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel10.setText("Lista de Clases:");
+        jLayeredPane2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 268, -1, -1));
+        jLayeredPane2.add(TxNombreM, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 113, 201, -1));
+        jLayeredPane2.add(TxNumCuentaM, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 147, 201, -1));
+        jLayeredPane2.add(TxContraseñaM, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 175, 201, -1));
+        jLayeredPane2.add(TxNacionalidadM, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 209, 201, -1));
+        jLayeredPane2.add(TxTituloM, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 237, 201, -1));
+        jLayeredPane2.add(TListaClases, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 271, 201, -1));
 
         btagregarMaestro.setText("Agregar");
         btagregarMaestro.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -131,73 +150,23 @@ public class Ethereum_Principal extends javax.swing.JFrame {
                 btagregarMaestroMouseClicked(evt);
             }
         });
+        jLayeredPane2.add(btagregarMaestro, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 299, 128, 67));
 
         javax.swing.GroupLayout jmaestrosLayout = new javax.swing.GroupLayout(jmaestros.getContentPane());
         jmaestros.getContentPane().setLayout(jmaestrosLayout);
         jmaestrosLayout.setHorizontalGroup(
             jmaestrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jmaestrosLayout.createSequentialGroup()
-                .addContainerGap(122, Short.MAX_VALUE)
-                .addGroup(jmaestrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jmaestrosLayout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(100, 100, 100))
-                    .addGroup(jmaestrosLayout.createSequentialGroup()
-                        .addGroup(jmaestrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jmaestrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(btagregarMaestro, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jmaestrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TListaClases, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxTituloM, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxNacionalidadM, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxContraseñaM, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxNombreM, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxNumCuentaM, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(145, 145, 145))))
+            .addGroup(jmaestrosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(554, Short.MAX_VALUE))
         );
         jmaestrosLayout.setVerticalGroup(
             jmaestrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jmaestrosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jmaestrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jmaestrosLayout.createSequentialGroup()
-                        .addComponent(TxNombreM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TxNumCuentaM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jmaestrosLayout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jmaestrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jmaestrosLayout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel10))
-                    .addGroup(jmaestrosLayout.createSequentialGroup()
-                        .addComponent(TxContraseñaM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TxNacionalidadM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TxTituloM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TListaClases, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btagregarMaestro, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         jalumnos.setPreferredSize(new java.awt.Dimension(530, 600));
@@ -284,34 +253,47 @@ public class Ethereum_Principal extends javax.swing.JFrame {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        jAsignaturas.setPreferredSize(new java.awt.Dimension(664, 372));
+        jAsignaturas.setPreferredSize(new java.awt.Dimension(700, 1000));
+
+        jLayeredPane3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel11.setText("Aula:");
+        jLayeredPane3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 289, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel12.setText("Edificios:");
+        jLayeredPane3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 320, -1, -1));
+        jLayeredPane3.add(TxNombreAsign, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 101, 201, -1));
+        jLayeredPane3.add(TxNumCuentaAsign, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 135, 201, -1));
+        jLayeredPane3.add(TxDocenteAsign, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 227, 201, -1));
 
         TxValorUnidAsign.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxValorUnidAsignActionPerformed(evt);
             }
         });
+        jLayeredPane3.add(TxValorUnidAsign, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 261, 201, -1));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel13.setText("Formulario de Asignaturas");
+        jLayeredPane3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 477, 89));
 
         TxAulaAsign.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxAulaAsignActionPerformed(evt);
             }
         });
+        jLayeredPane3.add(TxAulaAsign, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 289, 201, -1));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel14.setText("Nombre:");
+        jLayeredPane3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 101, 134, -1));
+        jLayeredPane3.add(TxEdificioAsign, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 323, 201, -1));
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel15.setText("Numero de Asignatura:");
+        jLayeredPane3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 132, 193, -1));
 
         btagregar1.setText("Agregar");
         btagregar1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -319,156 +301,70 @@ public class Ethereum_Principal extends javax.swing.JFrame {
                 btagregar1MouseClicked(evt);
             }
         });
+        jLayeredPane3.add(btagregar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 484, 168, 66));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel16.setText("Docente:");
+        jLayeredPane3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 227, 134, -1));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel17.setText("Valor de Unidad:");
+        jLayeredPane3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 258, -1, -1));
 
         jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel28.setText("Numero de Seccion:");
+        jLayeredPane3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 163, 166, -1));
+        jLayeredPane3.add(TxNumSeccionAsign, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 167, 201, -1));
+        jLayeredPane3.add(TxHorarioAsign, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 199, 201, -1));
 
         jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel29.setText("Horario:");
+        jLayeredPane3.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 195, 134, -1));
+        jLayeredPane3.add(TCantalumnoAsign, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 354, 201, -1));
 
         jLabel30.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel30.setText("Cantidad Alumnos:");
+        jLayeredPane3.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 350, -1, -1));
+        jLayeredPane3.add(TModalidadAsign, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 386, 201, -1));
 
         jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel31.setText("Modalidad:");
+        jLayeredPane3.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 382, -1, -1));
+        jLayeredPane3.add(TDiasImparteAsign, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 418, 201, -1));
 
         jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel32.setText("Dias que se Imparte:");
+        jLayeredPane3.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 414, -1, -1));
 
         TPrecioAsign.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TPrecioAsignActionPerformed(evt);
             }
         });
+        jLayeredPane3.add(TPrecioAsign, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 450, 201, -1));
 
         jLabel33.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel33.setText("Precio:");
+        jLayeredPane3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 446, -1, -1));
 
         javax.swing.GroupLayout jAsignaturasLayout = new javax.swing.GroupLayout(jAsignaturas.getContentPane());
         jAsignaturas.getContentPane().setLayout(jAsignaturasLayout);
         jAsignaturasLayout.setHorizontalGroup(
             jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jAsignaturasLayout.createSequentialGroup()
-                .addContainerGap(89, Short.MAX_VALUE)
-                .addGroup(jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jAsignaturasLayout.createSequentialGroup()
-                        .addGroup(jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(TxHorarioAsign, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jAsignaturasLayout.createSequentialGroup()
-                                    .addGroup(jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(TxNombreAsign, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(TxNumCuentaAsign, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(TxNumSeccionAsign, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jAsignaturasLayout.createSequentialGroup()
-                                        .addComponent(jLabel30)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(TCantalumnoAsign, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jAsignaturasLayout.createSequentialGroup()
-                                        .addGroup(jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel17)
-                                            .addComponent(jLabel11)
-                                            .addComponent(jLabel12)
-                                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(77, 77, 77)
-                                        .addGroup(jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(TxEdificioAsign, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(TxAulaAsign, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(TxValorUnidAsign, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(TxDocenteAsign, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jAsignaturasLayout.createSequentialGroup()
-                                        .addComponent(jLabel31)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(TModalidadAsign, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jAsignaturasLayout.createSequentialGroup()
-                                        .addComponent(jLabel32)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(TDiasImparteAsign, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jAsignaturasLayout.createSequentialGroup()
-                                        .addComponent(jLabel33)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(TPrecioAsign, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(98, 98, 98))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jAsignaturasLayout.createSequentialGroup()
-                        .addComponent(btagregar1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(216, 216, 216))))
+                .addContainerGap(165, Short.MAX_VALUE)
+                .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
         jAsignaturasLayout.setVerticalGroup(
             jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jAsignaturasLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jAsignaturasLayout.createSequentialGroup()
-                        .addComponent(TxNombreAsign, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TxNumCuentaAsign, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jAsignaturasLayout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel15)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28)
-                    .addComponent(TxNumSeccionAsign, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TxHorarioAsign, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel29))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jAsignaturasLayout.createSequentialGroup()
-                        .addComponent(jLabel16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel12))
-                    .addGroup(jAsignaturasLayout.createSequentialGroup()
-                        .addComponent(TxDocenteAsign, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TxValorUnidAsign, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TxAulaAsign, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TxEdificioAsign, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(5, 5, 5)
-                .addGroup(jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TCantalumnoAsign, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel30))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TModalidadAsign, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel31))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TDiasImparteAsign, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel32))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TPrecioAsign, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel33))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btagregar1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(72, 72, 72)
+                .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        tmaestrocreacion.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         tmaestrocreacion.setText("Maestro");
         tmaestrocreacion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -476,6 +372,7 @@ public class Ethereum_Principal extends javax.swing.JFrame {
             }
         });
 
+        talumnocreacion.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         talumnocreacion.setText("Alumno");
         talumnocreacion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -527,6 +424,12 @@ public class Ethereum_Principal extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel2.setText("Usuario:");
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel3.setText("Contraseña:");
@@ -639,11 +542,32 @@ public class Ethereum_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btagregar2AlumnoMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        // TODO add your handling code here:
-         jalumnos.pack();
-        jalumnos.setLocationRelativeTo(this);
-        jalumnos.setModal(true);
-        jalumnos.setVisible(true);
+     //listar        
+     Dba db = new Dba("./BaseDatosRegistro.mdb");
+        db.conectar();
+        try {
+            db.query.execute("select * from Alumnos where Numero_cuenta= "+ jTextField1.getText() +" and Contrasena="+ jTextField2.getText() +"");
+            ResultSet rs = db.query.getResultSet();
+            if (rs.next()) {
+               
+            }
+            
+             db.query.execute("select * from Maestros where Numero_cuenta= "+ jTextField1.getText() +" and Contrasena="+ jTextField2.getText() +"");
+            ResultSet rs2 = db.query.getResultSet();
+            if (rs2.next()) {
+             jAsignaturas.pack();
+             jAsignaturas.setLocationRelativeTo(this);
+             jAsignaturas.setModal(true);
+             jAsignaturas.setVisible(true);
+            }
+            
+            
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        db.desconectar();
+        
+
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void btagregar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btagregar1MouseClicked
@@ -675,7 +599,7 @@ public class Ethereum_Principal extends javax.swing.JFrame {
             
             
             db.query.execute("INSERT INTO Asignaturas"
-                    + " (Nombre,cod_asig,cod_sec,horario,docente,cant_vlunt,aulaedificio,Cantaalumn,Modalidad,DíasImparte,precio)"
+                    + " (Nombre,cod_asig,cod_sec,horario,docente,cant_vlunt,aulaedificio,Cantalumn,Modalidad,DíasImparte,precio)"
                     + " VALUES ('" + n + "', '" + c + "', '" + seccion + "', '" + horario + "', '" + docente + "', '" + valorund + "', '" + aula + "', '" + edifasugn + "', '" + cantalumn + "', '" + modalidad + "', '" + tdiasImpart + "', '" + tprec +  "')");
             db.commit();
             
@@ -767,6 +691,10 @@ public class Ethereum_Principal extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btagregarMaestroMouseClicked
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -872,6 +800,8 @@ public class Ethereum_Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JLayeredPane jLayeredPane2;
+    private javax.swing.JLayeredPane jLayeredPane3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JDialog jalumnos;
