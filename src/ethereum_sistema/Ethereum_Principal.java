@@ -98,6 +98,18 @@ public class Ethereum_Principal extends javax.swing.JFrame {
         MenuSelectivo = new javax.swing.JDialog();
         tmaestrocreacion = new javax.swing.JButton();
         talumnocreacion = new javax.swing.JButton();
+        simulador = new javax.swing.JDialog();
+        jLabel34 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        ASIGNATURAS = new javax.swing.JComboBox<>();
+        jLabel36 = new javax.swing.JLabel();
+        DESCUENTO = new javax.swing.JComboBox<>();
+        jLabel37 = new javax.swing.JLabel();
+        COSTO_ASIGNATURA = new javax.swing.JComboBox<>();
+        CALCULAR = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TABLA = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -243,14 +255,14 @@ public class Ethereum_Principal extends javax.swing.JFrame {
             .addGroup(jalumnosLayout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(525, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         jalumnosLayout.setVerticalGroup(
             jalumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jalumnosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         jAsignaturas.setPreferredSize(new java.awt.Dimension(700, 1000));
@@ -352,7 +364,7 @@ public class Ethereum_Principal extends javax.swing.JFrame {
         jAsignaturasLayout.setHorizontalGroup(
             jAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jAsignaturasLayout.createSequentialGroup()
-                .addContainerGap(165, Short.MAX_VALUE)
+                .addContainerGap(201, Short.MAX_VALUE)
                 .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
         );
@@ -399,6 +411,104 @@ public class Ethereum_Principal extends javax.swing.JFrame {
                     .addComponent(tmaestrocreacion, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(talumnocreacion, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(37, Short.MAX_VALUE))
+        );
+
+        jLabel34.setText("Proyeccion A Pagar: ");
+
+        jLabel35.setText("Asigaturas Disponibles: ");
+
+        ASIGNATURAS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "\"ASG001\", \"Asignatura 1\", 0.20, 10%", "\"ASG002\", \"Asignatura 2\", 0.25, 20%" }));
+
+        jLabel36.setText(" Descuento (%):  ");
+
+        DESCUENTO.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10%", "20%" }));
+
+        jLabel37.setText("Costo de la Asignatura:");
+
+        COSTO_ASIGNATURA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0.020 ETH", "0.036 ETH" }));
+
+        CALCULAR.setText("Calcular");
+        CALCULAR.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CALCULARMouseClicked(evt);
+            }
+        });
+
+        TABLA.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Total Sin Descuento", "Con Descuento", "Cuota Mensual"
+            }
+        ));
+        jScrollPane1.setViewportView(TABLA);
+
+        javax.swing.GroupLayout simuladorLayout = new javax.swing.GroupLayout(simulador.getContentPane());
+        simulador.getContentPane().setLayout(simuladorLayout);
+        simuladorLayout.setHorizontalGroup(
+            simuladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(simuladorLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(simuladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(simuladorLayout.createSequentialGroup()
+                        .addGroup(simuladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(simuladorLayout.createSequentialGroup()
+                                .addComponent(jLabel35)
+                                .addGap(18, 18, 18)
+                                .addComponent(ASIGNATURAS, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(simuladorLayout.createSequentialGroup()
+                                .addComponent(jLabel37)
+                                .addGap(18, 18, 18)
+                                .addComponent(COSTO_ASIGNATURA, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(simuladorLayout.createSequentialGroup()
+                        .addGroup(simuladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CALCULAR, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(simuladorLayout.createSequentialGroup()
+                                .addComponent(jLabel36)
+                                .addGap(18, 18, 18)
+                                .addComponent(DESCUENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, simuladorLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel34)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62))
+        );
+        simuladorLayout.setVerticalGroup(
+            simuladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(simuladorLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(simuladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(ASIGNATURAS, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47)
+                .addGroup(simuladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel37)
+                    .addComponent(COSTO_ASIGNATURA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(simuladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(simuladorLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(simuladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel36)
+                            .addComponent(DESCUENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(57, 57, 57)
+                        .addComponent(CALCULAR, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(simuladorLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(51, 51, 51)
+                .addGroup(simuladorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -549,7 +659,10 @@ public class Ethereum_Principal extends javax.swing.JFrame {
             db.query.execute("select * from Alumnos where Numero_cuenta= "+ jTextField1.getText() +" and Contrasena="+ jTextField2.getText() +"");
             ResultSet rs = db.query.getResultSet();
             if (rs.next()) {
-               
+               simulador.pack();
+             simulador.setLocationRelativeTo(this);
+             simulador.setModal(true);
+             simulador.setVisible(true);
             }
             
              db.query.execute("select * from Maestros where Numero_cuenta= "+ jTextField1.getText() +" and Contrasena="+ jTextField2.getText() +"");
@@ -696,6 +809,11 @@ public class Ethereum_Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
+    private void CALCULARMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CALCULARMouseClicked
+        // TODO add your handling code here:
+        //    calcular();
+    }//GEN-LAST:event_CALCULARMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -732,7 +850,12 @@ public class Ethereum_Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> ASIGNATURAS;
+    private javax.swing.JButton CALCULAR;
+    private javax.swing.JComboBox<String> COSTO_ASIGNATURA;
+    private javax.swing.JComboBox<String> DESCUENTO;
     private javax.swing.JDialog MenuSelectivo;
+    private javax.swing.JTable TABLA;
     private javax.swing.JTextField TCantalumnoAsign;
     private javax.swing.JTextField TDescuentoA;
     private javax.swing.JTextField TDiasImparteAsign;
@@ -793,6 +916,10 @@ public class Ethereum_Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -802,10 +929,13 @@ public class Ethereum_Principal extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JLayeredPane jLayeredPane3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JDialog jalumnos;
     private javax.swing.JDialog jmaestros;
+    private javax.swing.JDialog simulador;
     private javax.swing.JButton talumnocreacion;
     private javax.swing.JButton tmaestrocreacion;
     // End of variables declaration//GEN-END:variables
