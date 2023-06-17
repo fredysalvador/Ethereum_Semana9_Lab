@@ -7,6 +7,7 @@ package ethereum_sistema;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Fredy Salvador
@@ -433,18 +434,28 @@ public class Ethereum_Principal extends javax.swing.JFrame {
                 CALCULARMouseClicked(evt);
             }
         });
+        CALCULAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CALCULARActionPerformed(evt);
+            }
+        });
 
         TABLA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Total Sin Descuento", "Con Descuento", "Cuota Mensual"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(TABLA);
 
         javax.swing.GroupLayout simuladorLayout = new javax.swing.GroupLayout(simulador.getContentPane());
@@ -812,7 +823,55 @@ public class Ethereum_Principal extends javax.swing.JFrame {
     private void CALCULARMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CALCULARMouseClicked
         // TODO add your handling code here:
         //    calcular();
+// Definir el tipo de cambio de Ethereum a Lempiras
+double tipoCambioETHtoLPS = 30000.0; // Valor de cambio de Ethereum a Lempiras
+double sumaMensualidadesLPS = 0.0;
+
+// Obtén los tres valores seleccionados del JComboBox
+String valorSeleccionado = (String) COSTO_ASIGNATURA.getSelectedItem();
+String parteNumerica = valorSeleccionado.replaceAll("[^0-9.]", ""); // Extrae solo los caracteres numéricos y el punto decimal
+
+double valor2ETH = Double.parseDouble(parteNumerica);
+double valor2formateadoLPS = valor2ETH * tipoCambioETHtoLPS;
+
+String valorSeleccionado2 = (String) DESCUENTO.getSelectedItem();
+String parteNumerica2 = valorSeleccionado2.replaceAll("%", ""); // Elimina el símbolo de porcentaje
+
+double valor3 = Double.parseDouble(parteNumerica2);
+
+double descuentoETH = valor2formateadoLPS * (valor3 / 100.0); // Calcula el valor del descuento como porcentaje del costo en LPS
+double valor2conDescuentoLPS = valor2formateadoLPS - descuentoETH;
+double mensualidadLPS = valor2conDescuentoLPS / 3;
+
+// Crea un array de objetos con los valores convertidos
+Object[] fila = {valor2formateadoLPS, valor2conDescuentoLPS, mensualidadLPS};
+
+// Obtén el modelo de datos de la JTable
+DefaultTableModel tableModel = (DefaultTableModel) TABLA.getModel();
+
+// Agrega el array de objetos como una nueva fila al modelo de datos de la JTable
+tableModel.addRow(fila);
+
+// Actualiza la visualización de la JTable
+tableModel.fireTableDataChanged();
+
+int columnaMensualidadLPS = 2; // Reemplaza con el índice de la columna deseada (empezando desde 0)
+
+// Iterar sobre todas las filas y sumar los valores de la columna deseada
+int totalFilas = tableModel.getRowCount();
+for (int i = 0; i < totalFilas; i++) {
+    double valorMensualidadLPS = (double) tableModel.getValueAt(i, columnaMensualidadLPS);
+    sumaMensualidadesLPS += valorMensualidadLPS;
+}
+
+// Mostrar la suma total en el TextField
+jTextField3.setText(String.valueOf(sumaMensualidadesLPS));
+
     }//GEN-LAST:event_CALCULARMouseClicked
+
+    private void CALCULARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CALCULARActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CALCULARActionPerformed
 
     /**
      * @param args the command line arguments
